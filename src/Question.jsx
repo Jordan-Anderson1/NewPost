@@ -3,7 +3,7 @@ import Tag from "./Tag";
 import RenderTags from "./RenderTags";
 import EnterTags from "./EnterTags";
 
-const Question = () => {
+const Question = ({ setSubmitted }) => {
   const [tags, setTags] = useState([]);
   const [tagInput, setTagInput] = useState("");
   const [title, setTitle] = useState("");
@@ -16,6 +16,7 @@ const Question = () => {
     setTitle("");
     setDescription("");
     setTags([]);
+    setSubmitted(true);
   };
   return (
     <>

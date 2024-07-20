@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import RenderTags from "./RenderTags";
 import EnterTags from "./EnterTags";
 
-const Article = () => {
+const Article = ({ setSubmitted }) => {
   const [tags, setTags] = useState([]);
   const [tagInput, setTagInput] = useState("");
   const [title, setTitle] = useState("");
@@ -17,6 +17,7 @@ const Article = () => {
     setAbstract("");
     setText("");
     setTags([]);
+    setSubmitted(true);
   };
   return (
     <div className="space-y-2">

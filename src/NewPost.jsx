@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Question from "./Question";
 import Article from "./Article";
 
-const NewPost = () => {
+const NewPost = ({ setSubmitted }) => {
   const [postType, setPostType] = useState("");
   return (
     <div className="w-[800px] h-[800px] bg-white rounded-2xl p-6 space-y-2 ">
@@ -33,8 +33,8 @@ const NewPost = () => {
         </div>
       </div>
       <h1>What would you like to post or share?</h1>
-      {postType === "question" && <Question />}
-      {postType === "article" && <Article />}
+      {postType === "question" && <Question setSubmitted={setSubmitted} />}
+      {postType === "article" && <Article setSubmitted={setSubmitted} />}
     </div>
   );
 };
